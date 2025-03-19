@@ -1,11 +1,21 @@
+import { Routes, Route, HashRouter } from 'react-router-dom';
+import LicensePage from './screens/license';
+import { electronAPIType } from './preload';
+
+declare global {
+    interface Window {
+        api: electronAPIType;
+    }
+}
 
 function App() {
     return (
-        <div>
-            <h1 className="text-3xl font-bold underline">
-                Hello world!
-            </h1>
-        </div>
+        <HashRouter>
+            <Routes>
+                <Route path="/" element={<LicensePage />} />
+                <Route path="/screens" element={<div>sample</div>} />
+            </Routes>
+        </HashRouter>
     )
 }
 
