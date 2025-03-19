@@ -1,10 +1,8 @@
 
 function App() {
     return (
-        <div>
-            <h1 className="text-3xl font-bold underline">
-                Hello world!
-            </h1>
+        <div className="relative h-full w-full bg-gradient-to-r from-neutral-900 via-transparent to-neutral-900">
+                hello
         </div>
     )
 }
