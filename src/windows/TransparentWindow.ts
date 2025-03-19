@@ -8,22 +8,24 @@ class TransparentWindow {
   private window: BrowserWindow | null = null;
 
   private createWindow() {
-    const {bounds} = screen.getPrimaryDisplay()
+    const { bounds } = screen.getPrimaryDisplay();
     this.window = new BrowserWindow({
       ...bounds,
       frame: false,
       transparent: true,
-      enableLargerThanScreen:true,
-      alwaysOnTop:true,
+      enableLargerThanScreen: true,
+      alwaysOnTop: true,
       webPreferences: {
         preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
       },
     });
 
-    this.window.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
+    this.window.loadURL(`${MAIN_WINDOW_WEBPACK_ENTRY}/#transparent`);
     this.window.setAlwaysOnTop(true, "screen-saver", 1);
-    this.window.setVisibleOnAllWorkspaces(true, {visibleOnFullScreen: true})
-    this.window.webContents.openDevTools()
+    this.window.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true });
+    this.window.webContents.openDevTools({ mode: "detach" });
+    this.window.setHiddenInMissionControl(true);
+    this.window.setIgnoreMouseEvents(true);
 
     // this.window.on("closed", () => {
     //   this.window = null;

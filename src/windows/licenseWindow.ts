@@ -9,8 +9,19 @@ class LicenseWindow {
 
   private createWindow() {
     this.window = new BrowserWindow({
-      height: 600,
-      width: 350,
+      height: 570,
+      width: 400,
+      fullscreen: false,
+      resizable: false,
+      frame: false,
+      transparent: true,
+      backgroundMaterial: "mica",
+      vibrancy: "sidebar",
+      visualEffectState: "active",
+      titleBarStyle: "hiddenInset",
+      alwaysOnTop: true,
+      trafficLightPosition: { x: 8, y: 8 },
+      skipTaskbar: true,
       webPreferences: {
         preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
       },

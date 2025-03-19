@@ -1,9 +1,21 @@
+import { Routes, Route, HashRouter } from 'react-router-dom';
+import LicensePage from './screens/license';
+import { electronAPIType } from './preload';
+
+declare global {
+    interface Window {
+        api: electronAPIType;
+    }
+}
 
 function App() {
     return (
-        <div className="relative h-full w-full bg-gradient-to-r from-neutral-900 via-transparent to-neutral-900">
-                hello
-        </div>
+        <HashRouter>
+            <Routes>
+                <Route path="/" element={<LicensePage />} />
+                <Route path="/transparent" element={<div>sample</div>} />
+            </Routes>
+        </HashRouter>
     )
 }
 
