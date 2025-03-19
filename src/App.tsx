@@ -13,7 +13,7 @@ function App() {
         <HashRouter>
             <Routes>
                 <Route path="/" element={<LicensePage />} />
-                <Route path="/screens" element={<div>sample</div>} />
+                <Route path="/transparent" element={<div>sample</div>} />
             </Routes>
         </HashRouter>
     )
