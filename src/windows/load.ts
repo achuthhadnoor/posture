@@ -1,0 +1,2 @@
+import "./licenseWindow";
+import "./settingsWindow";
